@@ -1,0 +1,23 @@
+{
+  "name": "psi-ngrok",
+  "version": "0.1.0",
+  "description": "PageSpeed Insights with local project",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "author": "denar90",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "ngrok": "^2.2.2",
+    "object-assign": "^4.1.0",
+    "psi": "^2.0.4"
+  },
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "connect": "^3.5.0",
+    "serve-static": "^1.11.1",
+    "sinon": "^1.17.5"
+  }
+}
