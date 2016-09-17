@@ -7,7 +7,22 @@
     "test": "ava"
   },
   "author": "denar90",
+  "repository": "denar90/psi-ngrok",
   "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "pagespeed",
+    "insights",
+    "speed",
+    "page",
+    "website",
+    "measure",
+    "optimize",
+    "size",
+    "localhost"
+  ],
   "dependencies": {
     "bluebird": "^3.4.6",
     "ngrok": "^2.2.2",
