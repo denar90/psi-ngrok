@@ -46,7 +46,7 @@ const runPSIWithStrategy = function() {
 
 const runPSI = function(options) {
   return Promise.all(config.pages.map(page => {
-    return psi(url.resolve(config.url, page), options).then((data) => {
+    return psi.output(url.resolve(config.url, page), options).then((data) => {
       config.onSuccess(data);
     }).catch(err => {
       config.onError(err.message);
