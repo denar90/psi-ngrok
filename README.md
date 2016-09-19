@@ -1,4 +1,4 @@
-# psi-ngrok
+# psi-ngrok [![Build Status](https://travis-ci.org/denar90/psi-ngrok.svg?branch=master)](https://travis-ci.org/denar90/psi-ngrok)
 > PageSpeed Insights with local project
 
 Uses [psi](https://github.com/addyosmani/psi) and [ngrok](https://github.com/inconshreveable/ngrok) for running PageSpeed Insights
@@ -50,7 +50,7 @@ const config = {
 psiNgrok(config);
 ```
 
-Also look at [recipes](/resipes).
+Also look at [recipes](/recipes).
 
 ## Usage with Grunt
 
