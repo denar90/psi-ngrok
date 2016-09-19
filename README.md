@@ -21,7 +21,7 @@ $ npm install --save-dev psi-ngrok
 ```js
 const psiNgrok = require('psi-ngrok');
 
-psiNgrok(config);
+psiNgrok();
 ```
 
 ### Usage with configuration
@@ -49,6 +49,105 @@ const config = {
 
 psiNgrok(config);
 ```
+
+Also look at [recipes](/resipes).
+
+## Usage with Grunt
+
+Here example of using `psi-ngrok` with [grunt-connect](https://github.com/gruntjs/grunt-contrib-connect)
+
+```js
+
+var psiNgrok = require('psi-ngrok');
+
+module.exports = function(grunt) {
+
+  grunt.initConfig({
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: 'public'
+        }
+      }
+    },
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-connect');
+
+  grunt.registerTask('pagespeed', function() {
+    var async = this.async;
+
+    grunt.event.once('connect.server.listening', function(host, port) {
+      psiNgrok({
+        port: port,
+        pages: ['index.html', 'slow.html'],
+        onError: function(error) {
+          grunt.fatal(error);
+        },
+        options: {
+          threshold: 80
+        }
+      }).then(async());
+    });
+  });
+
+  grunt.registerTask('default', ['pagespeed', 'connect:server:keepalive']);
+};
+
+```
+
+#### Want to test it?
+
+Run
+  - `git clone https://github.com/denar90/psi-ngrok && cd psi-ngrok && npm i`
+  - `npm run grunt-example`
+  
+
+## Usage with Gulp
+
+Here example of using `psi-ngrok` with [gulp-connect](https://github.com/avevlad/gulp-connect)
+
+```js
+
+var gulp = require('gulp');
+var connect = require('gulp-connect');
+var psiNgrok = require('psi-ngrok');
+var port = 8000;
+
+var connectServer = function() {
+  return connect.server({
+    root: 'public',
+    port: port
+  });
+};
+
+function handleError(err) {
+  console.log(err.toString());
+  process.exit(-1);
+}
+
+gulp.task('pagespeed', function () {
+  psiNgrok({
+    pages: ['index.html', 'slow.html'],
+    port: port,
+    onBeforeConnect: connectServer,
+    onError: handleError,
+    options: {
+      threshold: 80
+    }
+  });
+});
+
+gulp.task('default', ['pagespeed']);
+
+```
+
+#### Want to test it?
+
+Run
+  - `git clone https://github.com/denar90/psi-ngrok && cd psi-ngrok && npm i`
+  - `npm run gulp-example`
 
 ## API
 
