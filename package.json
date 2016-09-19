@@ -1,6 +1,6 @@
 {
   "name": "psi-ngrok",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "PageSpeed Insights with local project",
   "main": "index.js",
   "scripts": {
