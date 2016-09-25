@@ -14,7 +14,7 @@ const onError = sinon.spy();
 
 let config = {
   strategies: ['mobile', 'desktop'],
-  pages: ['index.html', 'slow.html'],
+  pages: ['index.html', 'slow_2.html'],
   onBeforeConnect: onBeforeConnect,
   onSuccess: onSuccess,
   onError: onError,
