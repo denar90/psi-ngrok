@@ -26,9 +26,7 @@
     "localhost"
   ],
   "dependencies": {
-    "bluebird": "^3.4.6",
     "ngrok": "^2.2.2",
-    "object-assign": "^4.1.0",
     "psi": "^2.0.4"
   },
   "devDependencies": {
