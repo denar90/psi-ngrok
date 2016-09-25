@@ -1,9 +1,7 @@
 'use strict';
-const Promise = require('bluebird');
 const psi = require('psi');
 const ngrok = require('ngrok');
 const url = require('url');
-const objectAssign = require('object-assign');
 
 let config = {
   strategies: ['mobile', 'desktop'],
@@ -16,7 +14,7 @@ let config = {
 };
 
 const psiNgrok = function() {
-  return Promise.bind(this)
+  return Promise.resolve()
     .then(() => {
       return Promise.resolve().then(config.onBeforeConnect);
     })
@@ -40,7 +38,7 @@ const ngrokConnect = function() {
 
 const runPSIWithStrategy = function() {
   return Promise.all(config.strategies.map(strategy => {
-    return runPSI(objectAssign({strategy: strategy}, config.options));
+    return runPSI(Object.assign({strategy: strategy}, config.options));
   }));
 };
 
@@ -55,7 +53,7 @@ const runPSI = function(options) {
 };
 
 module.exports = function(params) {
-  objectAssign(config, params);
+  Object.assign(config, params);
 
   return psiNgrok();
 };

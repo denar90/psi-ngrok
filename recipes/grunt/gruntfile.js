@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 8000,
-          base: 'recipes/grunt/public'
+          base: 'recipes/public'
         }
       }
     },

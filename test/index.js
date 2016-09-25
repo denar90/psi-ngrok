@@ -1,6 +1,5 @@
 'use strict';
 const test = require('ava');
-const Promise = require('bluebird');
 const sinon = require('sinon');
 const connect = require('connect');
 const serveStatic = require('serve-static');

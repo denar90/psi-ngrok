@@ -5,7 +5,7 @@ var port = 8000;
 
 var connectServer = function() {
   return connect.server({
-    root: 'public',
+    root: '../public',
     port: port
   });
 };
