@@ -1,8 +1,6 @@
 # psi-ngrok [![Build Status](https://travis-ci.org/denar90/psi-ngrok.svg?branch=master)](https://travis-ci.org/denar90/psi-ngrok)
 > PageSpeed Insights with local project
 
-<b>DEPRECATED</b>. I whould recommend to use [pwmetrics](https://github.com/paulirish/pwmetrics) instead. It gives more metrics results including PSI.
-
 Uses [psi](https://github.com/addyosmani/psi) and [ngrok](https://github.com/inconshreveable/ngrok) for running PageSpeed Insights
 for locally run web application.
 
